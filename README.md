@@ -1,32 +1,41 @@
 # LBM
 A Lattice Boltzmann based code to simulate simple 2-D fluid flow over an obstacle.
 
-
 ## Introduction
-Lattice Boltzman is a  method that is based on kinetic theory that instead of simulating a continuum flow like in traditional CFD it simulates molecules in a "latice" where particles collide and stream, , as shown in Figure 1.  
+Lattice Boltzman is a  method that is based on kinetic theory that instead of simulating a continuum flow like in traditional CFD it simulates molecules in a "latice" where particles collide and stream [1], as shown in Figure 1. This code was based on the D2Q9 structure with direction and velocities as shown in Figure 2.
 
 <sub>More information about LBM will be added once more literature review is done.</sub>
 
 <p align="center">
 <img src="https://www.researchgate.net/profile/Tobias-Weinzierl/publication/267248395/figure/fig2/AS:667619816378377@1536184376538/The-Lattice-Boltzmann-algorithm-for-the-D2Q9-model-In-the-collide-step-the.png">
     <b></b><br>
-  <a href="#">Figure 1: Lattice [1] </a>
+  <a href="#">Figure 1: Lattice [2] </a>
   <br><br>
 </p>
 
-#### Advantages of LBM [3]
+<p align="center">
+<img src="https://www.researchgate.net/publication/335459626/figure/fig1/AS:797057413570561@1567044704340/Diagram-of-D2Q9-Model.ppm" style="width:200px;">
+    <b></b><br>
+  <a href="#">Figure 1: D2Q9 and its lattice velocities [3] </a>
+  <br><br>
+</p>
+
+#### Advantages of LBM [4]
 * Algorithm is relatively simple.
 * Relatively simpler to paralellize when compared to traditional CFD.
 * Suitable for multi-phase flow.
 * Mesh-free
 
-#### Disadvantages of LBM [3]
+#### Disadvantages of LBM [4]
 * Not suitable for high Reynolds Numbers and consequently not good for compressible flow, particles can only move 1 lattice step per unit time. 
 * Cannot handle low viscosities.
 * Unproven for high Knudsen numbers.
 
 ## Algorithm & Code
-[![](https://mermaid.ink/img/pako:eNpVkE1qw0AMha8itEohvoAXhcZOsgmk0Ow8WQiPnBmS-WEsU4Ltu3ccU2i1kt77nhAasQ2ascRbomjgUisPuT6ayiTbi6P-CkXxPh1ZwAXPzwl2m2OA3oQYrb-9rfxugaAaTwvGIMb6-7xa1St_9jxB3ZwoSojXv87lO0ywb-ynyev_OyZxTh2ajsqOipYSVJReCG7RcXJkdT59XBSFYtixwjK3mjsaHqJQ-TmjQ9QkvNdWQsJS0sBbpEHC19O3v_PK1JbyI9wqzj8k-lxH)](https://mermaid-js.github.io/mermaid-live-editor/edit#pako:eNpVkE1qw0AMha8itEohvoAXhcZOsgmk0Ow8WQiPnBmS-WEsU4Ltu3ccU2i1kt77nhAasQ2ascRbomjgUisPuT6ayiTbi6P-CkXxPh1ZwAXPzwl2m2OA3oQYrb-9rfxugaAaTwvGIMb6-7xa1St_9jxB3ZwoSojXv87lO0ywb-ynyev_OyZxTh2ajsqOipYSVJReCG7RcXJkdT59XBSFYtixwjK3mjsaHqJQ-TmjQ9QkvNdWQsJS0sBbpEHC19O3v_PK1JbyI9wqzj8k-lxH)
+
+![Algorithm flowchart example](https://user-images.githubusercontent.com/98285490/152614772-256ca5d6-3105-4328-b0c6-9e742f62f6e3.png)
+
+
 
 ## Results
 
@@ -58,10 +67,12 @@ Lattice Boltzman is a  method that is based on kinetic theory that instead of si
 * Simulate other field variables such as heat.
 
 ## References
-[1]	P. Neumann, H.-J. Bungartz, M. Mehl and T. W. T. Neckel, "A Coupled Approach for Fluid Dynamic Problems Using the PDE Framework Peano," Garching, 2012.
+[1] T. Krüger, H. Kusumaatmaja, A. Kuzmin, O. Shardt, G. Silva and E. M. Viggen, The Lattice Boltzmann Method, Springer, 2017. 
 
-[2] T. Krüger, H. Kusumaatmaja, A. Kuzmin, O. Shardt, G. Silva and E. M. Viggen, The Lattice Boltzmann Method, Springer, 2017. 
+[2]	P. Neumann, H.-J. Bungartz, M. Mehl and T. W. T. Neckel, "A Coupled Approach for Fluid Dynamic Problems Using the PDE Framework Peano," Garching, 2012.
 
-[3] D. Elsworth, "The Lattice Boltzmann Method (EGEE520)," State College, 2016.
+[3] https://www.researchgate.net/figure/Diagram-of-D2Q9-Model_fig1_335459626
+
+[4] D. Elsworth, "The Lattice Boltzmann Method (EGEE520)," State College, 2016.
 
 
