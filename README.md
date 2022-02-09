@@ -40,22 +40,26 @@ Lattice Boltzman is a  method that is based on kinetic theory that instead of si
 ## Results
 
 
-<p align="center">
-<img src="https://user-images.githubusercontent.com/98285490/152075478-80b5f972-3c27-4340-8027-6ac7b1d5b143.png"> 
-  <b></b><br>
-  <a href="#">Figure 2: Vorticity at Re=72</a>
-  <br><br>
 
-</p>
+
 
 
   
 <p align="center">
-<img src="https://user-images.githubusercontent.com/98285490/152075152-bbf5ab45-2c9f-4ffb-9f26-073cbb094fc6.png">
+<img src="https://user-images.githubusercontent.com/98285490/153093882-861e4ec5-4562-418b-9ff2-6b2ebe463b59.gif">
     <b></b><br>
   <a href="#">Figure 3: Velocity field at Re=72</a>
   <br><br>
 </p>
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/98285490/153099197-0e7e781a-9f94-428b-bfbe-2f97dc157a7b.gif"> 
+  <b></b><br>
+  <a href="#">Figure 4: Vorticity at Re=72</a>
+  <br><br>
+
+</p>
+
 
 
 ### Future plans to improve the code
