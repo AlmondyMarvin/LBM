@@ -40,16 +40,15 @@ def Equilibrium(u, rho):
     return eq
 
 def StreamingnBounceBack():
+    temp = fI
+    temp[:, circle.T] = fI[::-1, circle.T]
     for i in range(L):
-        fO[i, circle.T] = fI[8-i, circle.T]
-    for i in range(L):
-       fI[i, :, :] = np.roll(np.roll(fO[i, :, :], e[i, 0], axis=0), e[i, 1], axis=1)
-    return fO, fI
+       fI[i, :, :] = np.roll(np.roll(fI[i, :, :], e[i, 0], axis=0), e[i, 1], axis=1)
+    return fI,temp
 
 def Initialization():
-    global fI, fO, eq, u, uini, rho, circle
+    global fI, eq, u, uini, rho, circle
     fI = np.zeros((L, nx, ny))
-    fO = np.zeros((L, nx, ny))
     eq = np.zeros((L, nx, ny))
     u = np.zeros((2, nx, ny))
     uini = u
@@ -63,12 +62,12 @@ def Initialization():
 # ##### Uncomment/Comment this section for animation (Takes long) ##################################
 # Initialization()
 # def update(nt):
-#     global fI, fO
-#     fI[[6, 7, 8], -1, :] = fI[[6, 7, 8], -2, :]  # Outflow BC
-#     u, rho = Macroscopic()
-#     eq = Equilibrium(u,rho)
-#     fO = fI - omega * (fI - eq)
-#     fO, fI = StreamingnBounceBack()
+#     global fI
+#     fI,temp = StreamingnBounceBack()
+#     u, rho = Macroscopic() #no problem
+#     eq = Equilibrium(u,rho) # no problem
+#     fI = fI -omega * (fI - eq) # no problem
+#     fI[:, circle.T] = temp[:, circle.T]
 #     print(nt)
 #     plt.clf()
 #     return plt.imshow(np.linalg.norm(u,axis=0).T, cmap=cm.viridis)
@@ -84,11 +83,11 @@ def Initialization():
 ##### Uncomment/Comment this section for static image #########################################
 Initialization()
 for i in range(nt):
-    fI[[6, 7, 8], -1, :] = fI[[6, 7, 8], -2, :]  # Outflow BC
-    u, rho = Macroscopic()
-    eq = Equilibrium(u,rho)
-    fO = fI - omega * (fI - eq)
-    fO, fI = StreamingnBounceBack()
+    fI,temp = StreamingnBounceBack()
+    u, rho = Macroscopic() #no problem
+    eq = Equilibrium(u,rho) # no problem
+    fI = fI -omega * (fI - eq) # no problem
+    fI[:, circle.T] = temp[:, circle.T]
     print(i)
 
     if i>15000:
