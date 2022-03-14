@@ -86,7 +86,7 @@ This code was based on the D2Q9 lattice structure with direction and velocities 
 
 ### Future plans to improve the code
 * Set up different initial perturbations.
-* Reduce memory usage by storing pre-collision and post-collision distribution function in a single variable (F).
+* ~~Reduce memory usage by storing pre-collision and post-collision distribution function in a single variable (F).~~ **Implementd using the pull algorithm with slight computation time improvement of ~2s, from an average of 33.15s to 31.24s.**
 * Reduce the lack of Galilean invariance through the use of different collision operators, i.e MRT collision operator. 
 * Try different obstacles including streamlined shapes (i.e. airfoils).
 * Calculate C<sub>D</sub> & C<sub>L</sub> and compare it to literature value.
