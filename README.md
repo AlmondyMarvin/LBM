@@ -85,12 +85,14 @@ This code was based on the D2Q9 lattice structure with direction and velocities 
 
 
 ### Future plans to improve the code
+* Parallelize code using CUDA.
 * Set up different initial perturbations.
 * ~~Reduce memory usage by storing pre-collision and post-collision distribution function in a single variable (F).~~ **Implementd using the pull algorithm with slight computation time improvement of ~2s, from an average of 33.15s to 31.24s.**
+* Further improve memory allocation.
 * Reduce the lack of Galilean invariance through the use of different collision operators, i.e MRT collision operator. 
 * Try different obstacles including streamlined shapes (i.e. airfoils).
-* Calculate C<sub>D</sub> & C<sub>L</sub> and compare it to literature value.
-* Try having a spinning obstacle.
+* Implement momentum exchange to calculate fluid forces on bodies.
+* Implement moving boundary conditions in obstacles (i.e. spinning cylinder).
 * Simulate other field variables such as heat.
 
 
