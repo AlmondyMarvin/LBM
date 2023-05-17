@@ -11,7 +11,7 @@ nx, ny = 400, 100 # number of cells
 x, y = np.meshgrid(np.arange(nx), np.arange(ny))
 nt = 31000  # timesteps
 L = 9 #Number of directions
-u0 = 0.12 # Initial Velocity
+u0 = 0.12 # Initial Velocityy
 tau = 0.572 # Relaxation time
 omega = 1 / tau # Relaxation Factor
 
